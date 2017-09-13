@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: local
+
+server:
+  port: 8801
+
+---
+
+spring:
+    profiles: local
+zuul:
+  routes:
+    ui:
+      path: /**
+      url: http://localhost:8080
+    flux:
+      path: /webflux/**
+      url: http://localhost:8091
+      strip-prefix: true
+
+---
+
+spring:
+    profiles: dev
+zuul:
+  routes:
+    api:
+      path: xxx
+      url: xxx
+      strip-prefix: true
+    ui:
+      path: /**
+      url: xx

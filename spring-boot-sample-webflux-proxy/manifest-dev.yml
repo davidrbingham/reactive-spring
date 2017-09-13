@@ -1,0 +1,8 @@
+---
+memory: 512M
+applications:
+- name: rm-proxy
+  host: rm-proxy-dev
+  path: ./build/libs/rm-proxy.jar
+  env:
+    SPRING_PROFILES_ACTIVE: dev
